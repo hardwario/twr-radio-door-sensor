@@ -2,9 +2,9 @@
 
 # Firmware for BigClown Radio Door Sensor
 
-[![Travis](https://img.shields.io/travis/bigclownlabs/bcf-skeleton/master.svg)](https://travis-ci.org/bigclownlabs/bcf-skeleton)
-[![Release](https://img.shields.io/github/release/bigclownlabs/bcf-skeleton.svg)](https://github.com/bigclownlabs/bcf-skeleton/releases)
-[![License](https://img.shields.io/github/license/bigclownlabs/bcf-skeleton.svg)](https://github.com/bigclownlabs/bcf-skeleton/blob/master/LICENSE)
+[![Travis](https://img.shields.io/travis/bigclownlabs/bcf-radio-door-sensor/master.svg)](https://travis-ci.org/bigclownlabs/bcf-skeleton)
+[![Release](https://img.shields.io/github/release/bigclownlabs/bcf-radio-door-sensor.svg)](https://github.com/bigclownlabs/bcf-skeleton/releases)
+[![License](https://img.shields.io/github/license/bigclownlabs/bcf-radio-door-sensor.svg)](https://github.com/bigclownlabs/bcf-skeleton/blob/master/LICENSE)
 [![Twitter](https://img.shields.io/twitter/follow/BigClownLabs.svg?style=social&label=Follow)](https://twitter.com/BigClownLabs)
 
 See the project documentation on this link:
