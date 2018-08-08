@@ -113,7 +113,7 @@ void application_init(void)
     bc_led_set_mode(&led, BC_LED_MODE_OFF);
 
     // Initialize button
-    //bc_button_init(&button, BC_GPIO_BUTTON, BC_GPIO_PULL_DOWN, false);
+    bc_button_init(&button, BC_GPIO_BUTTON, BC_GPIO_PULL_DOWN, false);
     bc_button_set_event_handler(&button, button_event_handler, &button_event_count);
 
     // Initialize battery
@@ -126,6 +126,7 @@ void application_init(void)
 
     bc_switch_init(&door_sensor_a, BC_GPIO_P4, BC_SWITCH_TYPE_NC, BC_SWITCH_PULL_UP_DYNAMIC);
     bc_switch_set_event_handler(&door_sensor_a, door_sensor_event_handler, NULL);
+    //bc_switch_set_pull_advance_time(&door_sensor_a, 500);
 
     bc_switch_init(&door_sensor_b, BC_GPIO_P5, BC_SWITCH_TYPE_NC, BC_SWITCH_PULL_UP_DYNAMIC);
     bc_switch_set_event_handler(&door_sensor_b, door_sensor_event_handler, NULL);
