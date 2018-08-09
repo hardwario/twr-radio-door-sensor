@@ -2,7 +2,7 @@ article: https://www.bigclown.com/doc/projects/radio-door-sensor/
 video: https://youtu.be/pLUBDdo_niE
 images:
   - title:
-    url: https://www.bigclown.com/doc/projects/radio-smart-led-strip/project-thermostat-relay-bc.png
+    url: https://www.bigclown.com/doc/projects/radio-door-sensor/preview.jpg
 assembly:
   - name: BigClown Core Module
   - name: BigClown Sensor Module
