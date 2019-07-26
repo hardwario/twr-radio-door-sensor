@@ -2,7 +2,7 @@ article: https://www.bigclown.com/doc/projects/radio-door-sensor/
 video: https://youtu.be/pLUBDdo_niE
 images:
   - title:
-    url: https://www.bigclown.com/doc/projects/radio-door-sensor/preview.jpg
+    url: https://bigclown.sirv.com/playground-project-images/radio-door-sensor.jpg?w=800
 assembly:
   - name: BigClown Core Module
   - name: BigClown Sensor Module
