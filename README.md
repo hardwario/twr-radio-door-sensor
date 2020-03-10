@@ -1,15 +1,15 @@
-<a href="https://www.bigclown.com/"><img src="https://bigclown.sirv.com/logo.png" width="200" height="59" alt="BigClown Logo" align="right"></a>
+<a href="https://www.hardwario.com/"><img src="https://www.hardwario.com/ci/assets/hw-logo.svg" width="200" alt="HARDWARIO Logo" align="right"></a>
 
-# Firmware for BigClown Radio Door Sensor
+# Firmware for HARDWARIO Radio Door Sensor
 
 [![Travis](https://img.shields.io/travis/bigclownlabs/bcf-radio-door-sensor/master.svg)](https://travis-ci.org/bigclownlabs/bcf-radio-door-sensor)
 [![Release](https://img.shields.io/github/release/bigclownlabs/bcf-radio-door-sensor.svg)](https://github.com/bigclownlabs/bcf-radio-door-sensor/releases)
 [![License](https://img.shields.io/github/license/bigclownlabs/bcf-radio-door-sensor.svg)](https://github.com/bigclownlabs/bcf-radio-door-sensor/blob/master/LICENSE)
-[![Twitter](https://img.shields.io/twitter/follow/BigClownLabs.svg?style=social&label=Follow)](https://twitter.com/BigClownLabs)
+[![Twitter](https://img.shields.io/twitter/follow/hardwario_en.svg?style=social&label=Follow)](https://twitter.com/hardwario_en)
 
 See the project documentation on this link:
 
-**https://www.bigclown.com/doc/projects/radio-door-sensor/**
+**https://developers.hardwario.com/projects/radio-door-sensor/**
 
 ## License
 

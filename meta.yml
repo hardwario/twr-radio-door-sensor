@@ -4,7 +4,7 @@ images:
   - title:
     url: https://bigclown.sirv.com/playground-project-images/radio-door-sensor.jpg?w=800
 assembly:
-  - name: BigClown Core Module
-  - name: BigClown Sensor Module
-  - name: BigClown Mini Battery Module
-  - name: BigClown Enclosure BCE103
+  - name: HARDWARIO Core Module
+  - name: HARDWARIO Sensor Module
+  - name: HARDWARIO Mini Battery Module
+  - name: HARDWARIO Enclosure BCE103
