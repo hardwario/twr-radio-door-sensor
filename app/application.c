@@ -2,10 +2,7 @@
 
 #define SERVICE_INTERVAL_INTERVAL (60 * 60 * 1000)
 #define BATTERY_UPDATE_INTERVAL (60 * 60 * 1000)
-#define TEMPERATURE_PUB_NO_CHANGE_INTEVAL (15 * 60 * 1000)
-#define TEMPERATURE_PUB_VALUE_CHANGE 0.2f
-#define TEMPERATURE_UPDATE_SERVICE_INTERVAL (5 * 1000)
-#define TEMPERATURE_UPDATE_NORMAL_INTERVAL (10 * 1000)
+#define TEMPERATURE_UPDATE_INTERVAL (15 * 60 * 1000)
 
 bc_led_t led;
 bc_button_t button;
@@ -71,12 +68,7 @@ void tmp112_event_handler(bc_tmp112_t *self, bc_tmp112_event_t event, void *even
     {
         if (bc_tmp112_get_temperature_celsius(self, &value))
         {
-            if ((fabsf(value - param->value) >= TEMPERATURE_PUB_VALUE_CHANGE) || (param->next_pub < bc_scheduler_get_spin_tick()))
-            {
-                bc_radio_pub_temperature(param->channel, &value);
-                param->value = value;
-                param->next_pub = bc_scheduler_get_spin_tick() + TEMPERATURE_PUB_NO_CHANGE_INTEVAL;
-            }
+            bc_radio_pub_temperature(param->channel, &value);
         }
     }
 }
@@ -95,13 +87,6 @@ void battery_event_handler(bc_module_battery_event_t event, void *event_param)
             bc_radio_pub_battery(&voltage);
         }
     }
-}
-
-// Switch from SERVICE to NORMAL interval to less frequent temperature messages to save batteries
-void switch_to_normal_mode_task(void *param)
-{
-    bc_tmp112_set_update_interval(&tmp112, TEMPERATURE_UPDATE_NORMAL_INTERVAL);
-    bc_scheduler_unregister(bc_scheduler_get_current_task_id());
 }
 
 void application_init(void)
@@ -135,9 +120,7 @@ void application_init(void)
     temperature_event_param.channel = BC_RADIO_PUB_CHANNEL_R1_I2C0_ADDRESS_ALTERNATE;
     bc_tmp112_init(&tmp112, BC_I2C_I2C0, 0x49);
     bc_tmp112_set_event_handler(&tmp112, tmp112_event_handler, &temperature_event_param);
-    bc_tmp112_set_update_interval(&tmp112, TEMPERATURE_UPDATE_SERVICE_INTERVAL);
-
-    bc_scheduler_register(switch_to_normal_mode_task, NULL, SERVICE_INTERVAL_INTERVAL);
+    bc_tmp112_set_update_interval(&tmp112, TEMPERATURE_UPDATE_INTERVAL);
 
     bc_radio_pairing_request("door-sensor", VERSION);
 
