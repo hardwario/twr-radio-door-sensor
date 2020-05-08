@@ -1,8 +1,11 @@
 #include <application.h>
 
-#define SERVICE_INTERVAL_INTERVAL (60 * 60 * 1000)
-#define BATTERY_UPDATE_INTERVAL (60 * 60 * 1000)
+// Every 2 hours
+#define PERIODIC_REPORT_INTERVAL (2 * 60 * 60 * 1000)
+// Every 15 minutes
 #define TEMPERATURE_UPDATE_INTERVAL (15 * 60 * 1000)
+// Every 24 hours
+#define BATTERY_UPDATE_INTERVAL (24 * 60 * 60 * 1000)
 
 bc_led_t led;
 bc_button_t button;
@@ -21,6 +24,8 @@ void door_sensor_event_handler(bc_switch_t *self, bc_switch_event_t event, void 
     char topic[64];
     char channel = (self == &door_sensor_a) ? 'a' : 'b';
     snprintf(topic, sizeof(topic), "door-sensor/%c/state", channel);
+
+    bc_led_pulse(&led, 100);
 
     if (event == BC_SWITCH_EVENT_OPENED)
     {
@@ -125,4 +130,16 @@ void application_init(void)
     bc_radio_pairing_request("door-sensor", VERSION);
 
     bc_led_pulse(&led, 2000);
+}
+
+void application_task()
+{
+    // Periodic reporting
+    bool state_a = bc_switch_get_state(&door_sensor_a);
+    bool state_b = bc_switch_get_state(&door_sensor_b);
+
+    bc_radio_pub_bool("door-sensor/a/state", &state_a);
+    bc_radio_pub_bool("door-sensor/b/state", &state_b);
+
+    bc_scheduler_plan_current_relative(PERIODIC_REPORT_INTERVAL);
 }
