@@ -2,7 +2,7 @@
 
 # Firmware for HARDWARIO Radio Door Sensor
 
-[![Travis](https://img.shields.io/travis/bigclownlabs/bcf-radio-door-sensor/master.svg)](https://travis-ci.org/bigclownlabs/bcf-radio-door-sensor)
+[![Travis](https://www.travis-ci.com/hardwario/twr-radio-door-sensor.svg?branch=master)](https://www.travis-ci.com/hardwario/twr-radio-door-sensor)
 [![Release](https://img.shields.io/github/release/bigclownlabs/bcf-radio-door-sensor.svg)](https://github.com/bigclownlabs/bcf-radio-door-sensor/releases)
 [![License](https://img.shields.io/github/license/bigclownlabs/bcf-radio-door-sensor.svg)](https://github.com/bigclownlabs/bcf-radio-door-sensor/blob/master/LICENSE)
 [![Twitter](https://img.shields.io/twitter/follow/hardwario_en.svg?style=social&label=Follow)](https://twitter.com/hardwario_en)
