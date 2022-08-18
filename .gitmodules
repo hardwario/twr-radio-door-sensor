@@ -1,9 +1,6 @@
 [submodule "sdk"]
 	path = sdk
-	url = https://github.com/bigclownlabs/bcf-sdk.git
+	url = https://github.com/hardwario/twr-sdk.git
 [submodule "vscode"]
-	path = .vscode
-	url = https://github.com/bigclownlabs/bcf-vscode.git
-[submodule ".vscode"]
 	path = .vscode
 	url = https://github.com/bigclownlabs/bcf-vscode.git

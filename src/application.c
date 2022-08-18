@@ -127,7 +127,7 @@ void application_init(void)
     twr_tmp112_set_event_handler(&tmp112, tmp112_event_handler, &temperature_event_param);
     twr_tmp112_set_update_interval(&tmp112, TEMPERATURE_UPDATE_INTERVAL);
 
-    twr_radio_pairing_request("door-sensor", VERSION);
+    twr_radio_pairing_request("door-sensor", FW_VERSION);
 
     twr_led_pulse(&led, 2000);
 }
